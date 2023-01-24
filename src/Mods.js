@@ -91,7 +91,6 @@ const modifyOnce = (baseComponent, masterList, modWithLevel) => {
         return {
             ...baseComponent,
             turn_time: percentModify(baseComponent.turn_time, turnTime, false),
-            strength: percentModify(baseComponent.strength, hull),
         };
     } else if (id === 'max_speed' && masterList === ENGINES) {
         const [maxSpeed, powerCost] = getModWithLevel(modWithLevel).effects;
