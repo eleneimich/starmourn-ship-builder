@@ -216,6 +216,12 @@ const modifyOnce = (baseComponent, masterList, modWithLevel) => {
             recharge_time: percentModify(baseComponent.recharge_time, recharge),
             power: percentModify(baseComponent.power, powerCost),
         };
+   } else if (id === 'shield_augment' && masterList === SUPERSTRUCTURES) {
+        const [strength, powerCost] = getModWithLevel(modWithLevel).effects;
+        return {
+            ...baseComponent,
+            strength: percentModify(baseComponent.strength, strength),
+            power: percentModify(baseComponent.power, powerCost),        
     } else if (id === 'shield_res_gravitic') {
         // TODO
         return baseComponent;
